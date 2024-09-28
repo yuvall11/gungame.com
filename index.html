@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>חנות אקדחי כדורי ג'ל</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #333;
+            padding: 20px;
+            color: white;
+            text-align: center;
+            font-size: 24px;
+            letter-spacing: 1px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #444;
+            font-size: 32px;
+            margin-bottom: 30px;
+        }
+
+        .product-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 20px;
+        }
+
+        .product-card {
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 280px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .product-card h3 {
+            color: #333;
+            font-size: 20px;
+            margin: 16px 0;
+            text-align: center;
+        }
+
+        .product-card p {
+            color: #666;
+            text-align: center;
+        }
+
+        .price {
+            font-size: 22px;
+            color: #28a745;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .buy-btn {
+            background-color: #28a745;
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 0 0 12px 12px;
+            width: 100%;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .buy-btn:hover {
+            background-color: #218838;
+        }
+
+        .cart {
+            margin-top: 40px;
+            background-color: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .cart h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .cart-item:last-child {
+            border-bottom: none;
+        }
+
+        .total {
+            text-align: right;
+            font-size: 22px;
+            font-weight: bold;
+            color: #444;
+        }
+
+        footer {
+            margin-top: 50px;
+            text-align: center;
+            padding: 15px;
+            background-color: #333;
+            color: white;
+            font-size: 14px;
+        }
+
+        /* Media Query for responsive layout */
+        @media (max-width: 768px) {
+            .product-grid {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .product-card {
+                width: 100%;
+            }
+        }
+
+        .whatsapp-btn {
+            background-color: #25d366;
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 0 0 12px 12px;
+            width: 100%;
+            font-size: 18px;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        .whatsapp-btn:hover {
+            background-color: #1ebe57;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        חנות אקדחי כדורי ג'ל
+    </header>
+
+    <div class="container">
+        <h1>מגוון אקדחי כדורי ג'ל במבחר צבעים</h1>
+
+        <div class="product-grid">
+            <!-- שישה אקדחי ג'ל -->
+            <div class="product-card">
+                <img src="https://ae04.alicdn.com/kf/S7599b64d70414371976e26534827a8cb5.jpg_480x480.jpg" alt="אקדח ג'ל צבע כחול">
+                <h3>אקדח ג'ל צבע כחול</h3>
+                <p>אקדח ג'ל חזק ומדויק בצבע כחול</p>
+                <p class="price">₪125</p>
+                <button class="buy-btn" onclick="addToCart('אקדח ג\'ל צבע כחול', 125)">הוסף לעגלה</button>
+            </div>
+
+            <div class="product-card">
+                <img src="https://ae01.alicdn.com/kf/Sf0e0078fe3bc49afbd3464bb42be85b0X.jpg?width=800&height=800&hash=1600" alt="אקדח ג'ל צבע אדום">
+                <h3>אקדח ג'ל צבע צהוב</h3>
+                <p>אקדח ג'ל חזק ומדויק בצבע צהוב</p>
+                <p class="price">₪125</p>
+                <button class="buy-btn" onclick="addToCart('אקדח ג\'ל צבע צהוב', 125)">הוסף לעגלה</button>
+            </div>
+
+            <div class="product-card">
+                <img src="https://ae04.alicdn.com/kf/S6f0e0c196ec54a4c94e623c08111607eV.jpg_480x480.jpg" alt="אקדח ג'ל צבע ירוק">
+                <h3>כדורי ג'ל צבע ציבעוני</h3>
+                <p></p>ד100000 כדורי ג'ל מהיר עם קיבולת גבוהה בצבע צבעוני</p>
+                <p class="price">₪25</p>
+                <button class="buy-btn" onclick="addToCart(' ג\'ל צבע = ציבעוני', 25)">הוסף לעגלה</button>
+            </div>
+
+            <div class="product-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBkZwin8nR8vD0zIHWOyn1guvOs9eKwqLaIzgb9UhYNJMSiYj9" alt="אקדח ג'ל צבע שחור">
+                <h3>אקדח ג'ל צבע ירוק</h3>
+                <p></p>ד100000 כדורי ג'ל מהיר עם קיבולת גבוהה בצבע ירוק</p>
+                <p class="price">₪25</p>
+                <button class="buy-btn" onclick="addToCart('אקדח ג\'ל צבע ירוק', 25)">הוסף לעגלה</button>
+            </div>
+
+            <div class="product-card">
+                <img src="https://ae04.alicdn.com/kf/S2cdddb8a74e54a658be2d489560086d1y.jpg_480x480.jpg" alt="אקדח ג'ל צבע כתום">
+                <h3>אקדח ג'ל צבע כתום</h3>
+                <p>אקדח ג'ל קל משקל עם דיוק גבוה בצבע כתום</p>
+                <p class="price">₪125</p>
+                <button class="buy-btn" onclick="addToCart('אקדח ג\'ל צבע כתום', 125)">הוסף לעגלה</button>
+            </div>
+
+            <div class="product-card">
+                <img src="data:image/jpeg;base64,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" alt="אקדח ג'ל צבע סגול">
+                <h3>אקדח ג'ל צבע שקוף</h3>
+                <p>ד100000 כדורי ג'ל מהיר עם קיבולת גבוהה בצבע שקוף</p>
+                <p class="price">₪25</p>
+                <button class="buy-btn" onclick="addToCart('אקדח ג\'ל צבע סגול', 25)">הוסף לעגלה</button>
+            </div>
+        </div>
+
+        <!-- עגלת קניות -->
+        <div class="cart">
+            <h2>עגלת הקניות שלך</h2>
+            <div id="cart-items"></div>
+            <p id="total-price" class="total"></p>
+            <p>בסיבת בעברה בביט תרשמו את הצבע של כל מוצר שאתם קונים</p>
+            <p>לא מוחק לכם מוצרים בחנות תעשו ריפרש לאתר ותלחצו שוב על המוצרים שאתם קונים</p>
+            <button class="buy-btn" onclick="checkoutBituach()">השלם רכישה בביט</button>
+            <button class="whatsapp-btn" onclick="checkoutWhatsApp()">השלם רכישה ב-WhatsApp</button>
+        </div>
+    </div>
+
+    <footer>
+        © 2024 חנות אקדחי כדורי ג'ל | צור קשר: 058-585-2244
+    </footer>
+
+    <script>
+        let cart = [];
+        let total = 0;
+
+        function addToCart(productName, price) {
+            cart.push({ name: productName, price: price });
+            total += price;
+            updateCart();
+        }
+
+        function updateCart() {
+            const cartItems = document.getElementById("cart-items");
+            cartItems.innerHTML = "";
+
+            cart.forEach(item => {
+                const itemDiv = document.createElement("div");
+                itemDiv.className = "cart-item";
+                itemDiv.innerText = item.name + " - ₪" + item.price;
+                cartItems.appendChild(itemDiv);
+            });
+
+            document.getElementById("total-price").innerText = "סכום כולל: ₪" + total;
+        }
+
+        function checkoutBituach() {
+            if (cart.length > 0) {
+                alert("השלם רכישה בביט: שלח סכום של ₪" + total + " למספר 058-585-2244");
+            } else {
+                alert("העגלה שלך ריקה!");
+            }
+        }
+
+        function checkoutWhatsApp() {
+            if (cart.length > 0) {
+                const phoneNumber = "972585852244"; // מספר WhatsApp בפורמט בינלאומי
+                const message = `שלום, אני מעוניין לרכוש את המוצרים הבאים: \n\n` + 
+                                cart.map(item => `- ${item.name}: ₪${item.price}`).join('\n') + 
+                                `\n\nסכום כולל: ₪${total}`;
+                const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+                window.open(whatsappUrl, '_blank');
+            } else {
+                alert("העגלה שלך ריקה!");
+            }
+        }
+    </script>
+
+</body>
+</html>
